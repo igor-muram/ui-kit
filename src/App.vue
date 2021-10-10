@@ -1,27 +1,73 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="wrapper">
+    <span>Icon with prop 'size' = 96:</span>
+    <Icon :path="paths.ArrowLeftBottom" :size="96" />
+  </div>
+
+  <div class="wrapper">
+    <span>Icon with type 'big' (size = 48):</span>
+    <Icon :path="paths.ArrowLeftBottom" :type="'big'" />
+  </div>
+
+  <div class="wrapper">
+    <span>Small icon (default size = 24):</span>
+    <Icon :path="paths.ArrowLeftBottom" />
+  </div>
+
+  <div class="wrapper">
+    <span>Vertically flipped icon:</span>
+    <Icon :path="paths.ArrowLeftBottom" :flip="'vertical'" />
+  </div>
+
+  <div class="wrapper">
+    <span>Horizontally flipped icon:</span>
+    <Icon :path="paths.ArrowLeftBottom" :flip="'horizontal'" />
+  </div>
+
+  <div class="wrapper">
+    <span>Vertically and horizontally flipped icon:</span>
+    <Icon :path="paths.ArrowLeftBottom" :flip="'both'" />
+  </div>
+
+  <div class="wrapper">
+    <span>Rotated icon (degrees = 90):</span>
+    <Icon :path="paths.ArrowLeftBottom" :rotate="90" />
+  </div>
+
+  <div class="wrapper">
+    <span>Rotated icon (degrees = 57):</span>
+    <Icon :path="paths.ArrowLeftBottom" :rotate="57" />
+  </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+
+import Icon from '@/components/Icon.vue';
+
+import { ArrowLeftBottom } from '@/icons';
 
 @Options({
   components: {
-    HelloWorld,
+    Icon,
+  },
+  data() {
+    return {
+      paths: {
+        ArrowLeftBottom,
+      },
+    };
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.wrapper {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 </style>
