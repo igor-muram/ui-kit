@@ -151,6 +151,9 @@
     <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'link'" />
     <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'disabled'" />
   </div>
+
+  <!-- <CalendarArrowRightIcon /> -->
+  <!-- <Icon :svg_icon="CalendarArrowRightIcon" /> -->
 </template>
 
 <script lang="ts">
@@ -161,10 +164,13 @@ import Button from '@/components/Button.vue';
 
 import { ArrowLeftBottom, Account } from '@/icons';
 
+// import CalendarArrowRightIcon from '../node_modules/vue-material-design-icons/CalendarArrowRight.vue';
+
 @Options({
   components: {
     Icon,
     Button,
+    // CalendarArrowRightIcon,
   },
   data() {
     return {
