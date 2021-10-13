@@ -1,10 +1,19 @@
 <template>
-  <svg :width="sizeValue" :height="sizeValue" :viewBox="viewboxValue" :style="styles">
+  <svg
+    v-if="iconPlugin.iconType === 'svg'"
+    :width="sizeValue"
+    :height="sizeValue"
+    :viewBox="viewboxValue"
+    :style="styles"
+  >
     <path :d="path" />
   </svg>
+  <i v-if="iconPlugin.iconType === 'text'" :class="icon_class"></i>
 </template>
 
 <script>
+import { inject } from 'vue';
+
 const types = {
   default: {
     size: 24,
@@ -25,6 +34,7 @@ export default {
       type: String,
       validator: (value) => ['horizontal', 'vertical', 'both', 'none'].includes(value),
     },
+    icon_class: String,
     rotate: { type: Number, default: 0 },
   },
 
@@ -49,6 +59,14 @@ export default {
     viewboxValue() {
       return `0 0 ${this.sizeValue} ${this.sizeValue}`;
     },
+  },
+
+  setup() {
+    const iconPlugin = inject('icon-plugin');
+
+    return {
+      iconPlugin,
+    };
   },
 };
 </script>
