@@ -13,11 +13,12 @@
   >
     <Icon
       :svg_icon="this.svg_icon"
-      :type="this.icon_type"
+      :mode="this.icon_mode"
       :size="this.icon_size"
       :flip="this.icon_flip"
       :rotate="this.icon_rotate"
       :icon_class="this.icon_class"
+      :icon_type="this.icon_type"
       v-if="this.icon_position === 'prefix'"
     />
     <span>
@@ -25,11 +26,12 @@
     </span>
     <Icon
       :svg_icon="this.svg_icon"
-      :type="this.icon_type"
+      :mode="this.icon_mode"
       :size="this.icon_size"
       :flip="this.icon_flip"
       :rotate="this.icon_rotate"
       :icon_class="this.icon_class"
+      :icon_type="this.icon_type"
       v-if="this.icon_position === 'postfix'"
     />
   </button>
@@ -51,12 +53,13 @@ import Icon from '@/components/Icon.vue';
         ['default', 'primary', 'success', 'danger', 'warning', 'link', 'disabled'].includes(value),
       default: 'default',
     },
-    icon_type: String,
+    icon_mode: String,
     icon_size: Number,
     icon_flip: String,
     icon_rotate: Number,
     icon_class: String,
     svg_icon: String,
+    icon_type: String,
     icon_position: {
       type: String,
       validator: (value: string) => ['prefix', 'postfix', 'none'].includes(value),

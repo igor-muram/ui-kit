@@ -2,13 +2,17 @@
   <img
     class="svg_icon"
     :src="this.svg_icon"
-    v-if="iconPlugin.iconType === 'svg'"
+    v-if="(iconPlugin.iconType === 'svg' || this.icon_type === 'svg') && this.icon_type !== 'text'"
     :width="sizeValue"
     :height="sizeValue"
     :viewBox="viewboxValue"
     :style="styles"
   />
-  <i v-if="iconPlugin.iconType === 'text'" :class="icon_class || ''"></i>
+  <i
+    class="text_icon"
+    v-if="(iconPlugin.iconType === 'text' || this.icon_type === 'text') && this.icon_type !== 'svg'"
+    :class="icon_class || ''"
+  ></i>
 </template>
 
 <script>
@@ -20,7 +24,7 @@ export default {
   name: 'icon',
 
   props: {
-    type: String,
+    mode: String,
     size: [String, Number],
     flip: {
       type: String,
@@ -28,6 +32,11 @@ export default {
     },
     icon_class: String,
     svg_icon: String,
+    icon_type: {
+      type: String,
+      validator: (value) => ['text', 'svg', 'none'].includes(value),
+      default: 'none',
+    },
     rotate: { type: Number, default: 0 },
   },
 
@@ -55,5 +64,9 @@ export default {
 path {
   fill: currentColor;
   transform: scale(calc(var(--size) / 24));
+}
+
+.text_icon {
+  font-family: 'Font Awesome 5 Pro';
 }
 </style>

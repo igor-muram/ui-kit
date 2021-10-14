@@ -5,8 +5,8 @@
   </div>
 
   <div class="wrapper">
-    <span>Icon with type 'big' (size = 48):</span>
-    <Icon :svg_icon="Messenger" :type="'big'" />
+    <span>Icon with mode 'big' (size = 48):</span>
+    <Icon :svg_icon="Messenger" :mode="'big'" />
   </div>
 
   <div class="wrapper">
@@ -37,6 +37,16 @@
   <div class="wrapper">
     <span>Rotated icon (degrees = 57):</span>
     <Icon :svg_icon="Messenger" :rotate="57" />
+  </div>
+
+  <div class="wrapper">
+    <span>SVG icon:</span>
+    <Icon :svg_icon="Messenger" />
+  </div>
+
+  <div class="wrapper">
+    <span>Text icon:</span>
+    <Icon :icon_class="'fas fa-ambulance'" :icon_type="'text'" />
   </div>
 
   <h2>Buttons:</h2>
@@ -148,7 +158,6 @@
   </div>
 
   <!-- <CalendarArrowRightIcon /> -->
-  <Icon :svg_icon="Messenger" />
 </template>
 
 <script lang="ts">

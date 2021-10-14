@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 
-const types = {
+const modes = {
   default: {
     size: 24,
   },
@@ -11,7 +11,7 @@ const types = {
 
 export default function useStyles(icon) {
   const defaults = computed(() => {
-    return types[icon.type] || types.default;
+    return modes[icon.mode] || modes.default;
   });
 
   const sizeValue = computed(() => {
