@@ -154,6 +154,7 @@
 
   <!-- <CalendarArrowRightIcon /> -->
   <!-- <Icon :svg_icon="CalendarArrowRightIcon" /> -->
+  <img :src="Messenger" alt="" />
 </template>
 
 <script lang="ts">
@@ -163,6 +164,8 @@ import Icon from '@/components/Icon.vue';
 import Button from '@/components/Button.vue';
 
 import { ArrowLeftBottom, Account } from '@/icons';
+
+import Messenger from '@/assets/messenger.svg';
 
 // import CalendarArrowRightIcon from '../node_modules/vue-material-design-icons/CalendarArrowRight.vue';
 
@@ -178,10 +181,13 @@ import { ArrowLeftBottom, Account } from '@/icons';
         ArrowLeftBottom,
         Account,
       },
+      Messenger,
     };
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  name: string = 'App';
+}
 </script>
 
 <style lang="scss">
