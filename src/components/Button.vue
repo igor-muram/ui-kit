@@ -17,6 +17,7 @@
       :size="this.icon_size"
       :flip="this.icon_flip"
       :rotate="this.icon_rotate"
+      :icon_class="this.icon_class"
       v-if="this.icon_position === 'prefix'"
     />
     <span>
@@ -28,6 +29,7 @@
       :size="this.icon_size"
       :flip="this.icon_flip"
       :rotate="this.icon_rotate"
+      :icon_class="this.icon_class"
       v-if="this.icon_position === 'postfix'"
     />
   </button>
@@ -53,6 +55,7 @@ import Icon from '@/components/Icon.vue';
     icon_size: Number,
     icon_flip: String,
     icon_rotate: Number,
+    icon_class: String,
     icon_position: {
       type: String,
       validator: (value: string) => ['prefix', 'postfix', 'none'].includes(value),
