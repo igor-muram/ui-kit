@@ -8,20 +8,13 @@
   >
     <path :d="path" />
   </svg>
-  <i v-if="iconPlugin.iconType === 'text'" :class="icon_class"></i>
+  <i v-if="iconPlugin.iconType === 'text'" :class="icon_class || ''"></i>
 </template>
 
 <script>
 import { inject } from 'vue';
 
-const types = {
-  default: {
-    size: 24,
-  },
-  big: {
-    size: 48,
-  },
-};
+import useStyles from '@/hooks/useStyles';
 
 export default {
   name: 'icon',
@@ -29,7 +22,7 @@ export default {
   props: {
     type: String,
     path: { type: String, required: true },
-    size: { type: [String, Number] },
+    size: [String, Number],
     flip: {
       type: String,
       validator: (value) => ['horizontal', 'vertical', 'both', 'none'].includes(value),
@@ -38,34 +31,16 @@ export default {
     rotate: { type: Number, default: 0 },
   },
 
-  computed: {
-    styles() {
-      return {
-        '--scale-x': ['both', 'horizontal'].includes(this.flip) ? '-1' : '1',
-        '--scale-y': ['both', 'vertical'].includes(this.flip) ? '-1' : '1',
-        '--rotate': isNaN(this.rotate) ? this.rotate : this.rotate + 'deg',
-        '--size': this.sizeValue,
-      };
-    },
-
-    defaults() {
-      return types[this.type] || types.default;
-    },
-
-    sizeValue() {
-      return this.size || this.defaults.size;
-    },
-
-    viewboxValue() {
-      return `0 0 ${this.sizeValue} ${this.sizeValue}`;
-    },
-  },
-
-  setup() {
+  setup(props) {
     const iconPlugin = inject('icon-plugin');
+
+    const { sizeValue, viewboxValue, styles } = useStyles(props);
 
     return {
       iconPlugin,
+      sizeValue,
+      viewboxValue,
+      styles,
     };
   },
 };
