@@ -1,119 +1,114 @@
 <template>
   <div class="wrapper">
     <span>Icon with prop 'size' = 96:</span>
-    <Icon :path="paths.ArrowLeftBottom" :size="96" />
+    <Icon :svg_icon="Messenger" :size="96" />
   </div>
 
   <div class="wrapper">
     <span>Icon with type 'big' (size = 48):</span>
-    <Icon :path="paths.ArrowLeftBottom" :type="'big'" />
+    <Icon :svg_icon="Messenger" :type="'big'" />
   </div>
 
   <div class="wrapper">
     <span>Small icon (default size = 24):</span>
-    <Icon :path="paths.ArrowLeftBottom" />
+    <Icon :svg_icon="Messenger" />
   </div>
 
   <div class="wrapper">
     <span>Vertically flipped icon:</span>
-    <Icon :path="paths.ArrowLeftBottom" :flip="'vertical'" />
+    <Icon :svg_icon="Messenger" :flip="'vertical'" />
   </div>
 
   <div class="wrapper">
     <span>Horizontally flipped icon:</span>
-    <Icon :path="paths.ArrowLeftBottom" :flip="'horizontal'" />
+    <Icon :svg_icon="Messenger" :flip="'horizontal'" />
   </div>
 
   <div class="wrapper">
     <span>Vertically and horizontally flipped icon:</span>
-    <Icon :path="paths.ArrowLeftBottom" :flip="'both'" />
+    <Icon :svg_icon="Messenger" :flip="'both'" />
   </div>
 
   <div class="wrapper">
     <span>Rotated icon (degrees = 90):</span>
-    <Icon :path="paths.ArrowLeftBottom" :rotate="90" />
+    <Icon :svg_icon="Messenger" :rotate="90" />
   </div>
 
   <div class="wrapper">
     <span>Rotated icon (degrees = 57):</span>
-    <Icon :path="paths.ArrowLeftBottom" :rotate="57" />
+    <Icon :svg_icon="Messenger" :rotate="57" />
   </div>
 
   <h2>Buttons:</h2>
 
   <div class="wrapper">
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :icon_size="40" :theme="'default'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'default'">
       Default
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :icon_size="40" :theme="'primary'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'primary'">
       Primary
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :icon_size="40" :theme="'success'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'success'">
       Success
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :icon_size="40" :theme="'danger'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'danger'">
       Danger
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :icon_size="40" :theme="'warning'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'warning'">
       Warning
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :icon_size="40" :theme="'link'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'link'">
       Link
     </Button>
-    <Button
-      :icon_path="paths.Account"
-      :icon_position="'prefix'"
-      :icon_size="40"
-      :theme="'disabled'"
-    >
+    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'disabled'">
       Disabled
     </Button>
   </div>
 
   <div class="wrapper">
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'default'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'default'">
       Default
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'primary'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'primary'">
       Primary
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'success'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'success'">
       Success
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'danger'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'danger'">
       Danger
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'warning'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'warning'">
       Warning
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'link'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'link'">
       Link
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'disabled'">
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'disabled'">
       Disabled
     </Button>
   </div>
 
   <div class="wrapper">
-    <Button :icon_path="paths.Account" :icon_position="'postfix'" :theme="'default'">
+    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'default'">
       Default
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'postfix'" :theme="'primary'">
+    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'primary'">
       Primary
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'postfix'" :theme="'success'">
+    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'success'">
       Success
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'postfix'" :theme="'danger'">
+    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'danger'">
       Danger
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'postfix'" :theme="'warning'">
+    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'warning'">
       Warning
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'postfix'" :theme="'link'">
+    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'link'">
       Link
     </Button>
-    <Button :icon_path="paths.Account" :icon_position="'postfix'" :theme="'disabled'">
+    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'disabled'">
       Disabled
     </Button>
   </div>
@@ -143,18 +138,17 @@
   </div>
 
   <div class="wrapper">
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'default'" />
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'primary'" />
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'success'" />
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'danger'" />
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'warning'" />
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'link'" />
-    <Button :icon_path="paths.Account" :icon_position="'prefix'" :theme="'disabled'" />
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'default'" />
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'primary'" />
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'success'" />
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'danger'" />
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'warning'" />
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'link'" />
+    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'disabled'" />
   </div>
 
   <!-- <CalendarArrowRightIcon /> -->
-  <!-- <Icon :svg_icon="CalendarArrowRightIcon" /> -->
-  <img :src="Messenger" alt="" />
+  <Icon :svg_icon="Messenger" />
 </template>
 
 <script lang="ts">
@@ -163,9 +157,8 @@ import { Options, Vue } from 'vue-class-component';
 import Icon from '@/components/Icon.vue';
 import Button from '@/components/Button.vue';
 
-import { ArrowLeftBottom, Account } from '@/icons';
-
 import Messenger from '@/assets/messenger.svg';
+import Account from '@/assets/account.svg';
 
 // import CalendarArrowRightIcon from '../node_modules/vue-material-design-icons/CalendarArrowRight.vue';
 
@@ -177,11 +170,8 @@ import Messenger from '@/assets/messenger.svg';
   },
   data() {
     return {
-      paths: {
-        ArrowLeftBottom,
-        Account,
-      },
       Messenger,
+      Account,
     };
   },
 })

@@ -1,13 +1,13 @@
 <template>
-  <svg
+  <img
+    class="svg_icon"
+    :src="this.svg_icon"
     v-if="iconPlugin.iconType === 'svg'"
     :width="sizeValue"
     :height="sizeValue"
     :viewBox="viewboxValue"
     :style="styles"
-  >
-    <path :d="path" />
-  </svg>
+  />
   <i v-if="iconPlugin.iconType === 'text'" :class="icon_class || ''"></i>
 </template>
 
@@ -21,13 +21,13 @@ export default {
 
   props: {
     type: String,
-    path: { type: String, required: true },
     size: [String, Number],
     flip: {
       type: String,
       validator: (value) => ['horizontal', 'vertical', 'both', 'none'].includes(value),
     },
     icon_class: String,
+    svg_icon: String,
     rotate: { type: Number, default: 0 },
   },
 
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-svg {
+.svg_icon {
   display: inline;
   transform: scale(var(--scale-x, 1), var(--scale-y, 1)) rotate(var(--rotate, 0deg));
 }

@@ -12,7 +12,7 @@
     }"
   >
     <Icon
-      :path="this.icon_path"
+      :svg_icon="this.svg_icon"
       :type="this.icon_type"
       :size="this.icon_size"
       :flip="this.icon_flip"
@@ -24,7 +24,7 @@
       <slot></slot>
     </span>
     <Icon
-      :path="this.icon_path"
+      :svg_icon="this.svg_icon"
       :type="this.icon_type"
       :size="this.icon_size"
       :flip="this.icon_flip"
@@ -37,6 +37,7 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+
 import Icon from '@/components/Icon.vue';
 
 @Options({
@@ -50,12 +51,12 @@ import Icon from '@/components/Icon.vue';
         ['default', 'primary', 'success', 'danger', 'warning', 'link', 'disabled'].includes(value),
       default: 'default',
     },
-    icon_path: String,
     icon_type: String,
     icon_size: Number,
     icon_flip: String,
     icon_rotate: Number,
     icon_class: String,
+    svg_icon: String,
     icon_position: {
       type: String,
       validator: (value: string) => ['prefix', 'postfix', 'none'].includes(value),
@@ -85,8 +86,8 @@ export default class Button extends Vue {
   outline: none;
   line-height: 1;
 
-  svg + span:not(:empty),
-  span:not(:empty) + svg {
+  .svg_icon + span:not(:empty),
+  span:not(:empty) + .svg_icon {
     margin-left: 10px;
   }
 
