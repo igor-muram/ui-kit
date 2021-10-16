@@ -1,124 +1,149 @@
 <template>
   <div class="wrapper">
-    <span>Icon with prop 'size' = 96:</span>
-    <Icon :svg_icon="Messenger" :size="96" />
+    <span>Icon with prop 'size' = 35:</span>
+    <Icon :icon_class="'fas fa-ambulance'" :size="35" />
   </div>
 
   <div class="wrapper">
-    <span>Icon with mode 'big' (size = 48):</span>
-    <Icon :svg_icon="Messenger" :mode="'big'" />
+    <span>Icon with mode 'big' (size = 26):</span>
+    <Icon :icon_class="'fas fa-ambulance'" :mode="'big'" />
   </div>
 
   <div class="wrapper">
-    <span>Small icon (default size = 24):</span>
-    <Icon :svg_icon="Messenger" />
+    <span>Icon with default size (size = 18):</span>
+    <Icon :icon_class="'fas fa-ambulance'" />
   </div>
 
   <div class="wrapper">
     <span>Vertically flipped icon:</span>
-    <Icon :svg_icon="Messenger" :flip="'vertical'" />
+    <Icon :icon_class="'fas fa-ambulance'" :flip="'vertical'" />
   </div>
 
   <div class="wrapper">
     <span>Horizontally flipped icon:</span>
-    <Icon :svg_icon="Messenger" :flip="'horizontal'" />
+    <Icon :icon_class="'fas fa-ambulance'" :flip="'horizontal'" />
   </div>
 
   <div class="wrapper">
     <span>Vertically and horizontally flipped icon:</span>
-    <Icon :svg_icon="Messenger" :flip="'both'" />
+    <Icon :icon_class="'fas fa-ambulance'" :flip="'both'" />
   </div>
 
   <div class="wrapper">
     <span>Rotated icon (degrees = 90):</span>
-    <Icon :svg_icon="Messenger" :rotate="90" />
+    <Icon :icon_class="'fas fa-ambulance'" :rotate="90" />
   </div>
 
   <div class="wrapper">
     <span>Rotated icon (degrees = 57):</span>
-    <Icon :svg_icon="Messenger" :rotate="57" />
-  </div>
-
-  <div class="wrapper">
-    <span>SVG icon:</span>
-    <Icon :svg_icon="Messenger" />
-  </div>
-
-  <div class="wrapper">
-    <span>Text icon:</span>
-    <Icon :icon_class="'fas fa-ambulance'" :icon_type="'text'" />
+    <Icon :icon_class="'fas fa-ambulance'" :rotate="57" />
   </div>
 
   <h2>Buttons:</h2>
 
   <div class="wrapper">
-    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'default'">
+    <Button
+      :icon_class="'fas fa-user-alt'"
+      :icon_position="'prefix'"
+      :icon_size="35"
+      :theme="'default'"
+    >
       Default
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'primary'">
+    <Button
+      :icon_class="'fas fa-user-alt'"
+      :icon_position="'prefix'"
+      :icon_size="35"
+      :theme="'primary'"
+    >
       Primary
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'success'">
+    <Button
+      :icon_class="'fas fa-user-alt'"
+      :icon_position="'prefix'"
+      :icon_size="35"
+      :theme="'success'"
+    >
       Success
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'danger'">
+    <Button
+      :icon_class="'fas fa-user-alt'"
+      :icon_position="'prefix'"
+      :icon_size="35"
+      :theme="'danger'"
+    >
       Danger
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'warning'">
+    <Button
+      :icon_class="'fas fa-user-alt'"
+      :icon_position="'prefix'"
+      :icon_size="35"
+      :theme="'warning'"
+    >
       Warning
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'link'">
+    <Button
+      :icon_class="'fas fa-user-alt'"
+      :icon_position="'prefix'"
+      :icon_size="35"
+      :theme="'link'"
+    >
       Link
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :icon_size="40" :theme="'disabled'">
+    <Button
+      :icon_class="'fas fa-user-alt'"
+      :icon_position="'prefix'"
+      :icon_size="35"
+      :theme="'disabled'"
+    >
       Disabled
     </Button>
   </div>
 
   <div class="wrapper">
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'default'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'default'">
       Default
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'primary'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'primary'">
       Primary
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'success'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'success'">
       Success
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'danger'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'danger'">
       Danger
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'warning'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'warning'">
       Warning
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'link'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'link'">
       Link
     </Button>
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'disabled'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'disabled'">
       Disabled
     </Button>
   </div>
 
   <div class="wrapper">
-    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'default'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'postfix'" :theme="'default'">
       Default
     </Button>
-    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'primary'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'postfix'" :theme="'primary'">
       Primary
     </Button>
-    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'success'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'postfix'" :theme="'success'">
       Success
     </Button>
-    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'danger'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'postfix'" :theme="'danger'">
       Danger
     </Button>
-    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'warning'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'postfix'" :theme="'warning'">
       Warning
     </Button>
-    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'link'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'postfix'" :theme="'link'">
       Link
     </Button>
-    <Button :svg_icon="Account" :icon_position="'postfix'" :theme="'disabled'">
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'postfix'" :theme="'disabled'">
       Disabled
     </Button>
   </div>
@@ -148,16 +173,14 @@
   </div>
 
   <div class="wrapper">
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'default'" />
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'primary'" />
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'success'" />
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'danger'" />
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'warning'" />
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'link'" />
-    <Button :svg_icon="Account" :icon_position="'prefix'" :theme="'disabled'" />
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'default'" />
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'primary'" />
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'success'" />
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'danger'" />
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'warning'" />
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'link'" />
+    <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'disabled'" />
   </div>
-
-  <!-- <CalendarArrowRightIcon /> -->
 </template>
 
 <script lang="ts">
@@ -166,22 +189,10 @@ import { Options, Vue } from 'vue-class-component';
 import Icon from '@/components/Icon.vue';
 import Button from '@/components/Button.vue';
 
-import Messenger from '@/assets/messenger.svg';
-import Account from '@/assets/account.svg';
-
-// import CalendarArrowRightIcon from '../node_modules/vue-material-design-icons/CalendarArrowRight.vue';
-
 @Options({
   components: {
     Icon,
     Button,
-    // CalendarArrowRightIcon,
-  },
-  data() {
-    return {
-      Messenger,
-      Account,
-    };
   },
 })
 export default class App extends Vue {
