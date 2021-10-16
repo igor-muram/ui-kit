@@ -1,14 +1,12 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 
-import 'vue-material-design-icons/styles.css';
-
 import iconPlugin from '@/plugins/icon-plugin';
 
 const app = createApp(App);
 
 const iconParameters = {
-	iconType: 'svg',
+	iconType: 'text',
 };
 
 app.use(iconPlugin, iconParameters);

@@ -1,17 +1,9 @@
 <template>
-  <img
-    class="svg_icon"
-    :src="this.svg_icon"
-    v-if="(iconPlugin.iconType === 'svg' || this.icon_type === 'svg') && this.icon_type !== 'text'"
-    :width="sizeValue"
-    :height="sizeValue"
-    :viewBox="viewboxValue"
-    :style="styles"
-  />
   <i
     class="text_icon"
-    v-if="(iconPlugin.iconType === 'text' || this.icon_type === 'text') && this.icon_type !== 'svg'"
+    v-if="iconPlugin.iconType === 'text'"
     :class="icon_class || ''"
+    :style="styles"
   ></i>
 </template>
 
@@ -30,25 +22,18 @@ export default {
       type: String,
       validator: (value) => ['horizontal', 'vertical', 'both', 'none'].includes(value),
     },
-    icon_class: String,
-    svg_icon: String,
-    icon_type: {
-      type: String,
-      validator: (value) => ['text', 'svg', 'none'].includes(value),
-      default: 'none',
-    },
     rotate: { type: Number, default: 0 },
+    icon_class: String,
   },
 
   setup(props) {
     const iconPlugin = inject('icon-plugin');
 
-    const { sizeValue, viewboxValue, styles } = useStyles(props);
+    const { sizeValue, styles } = useStyles(props);
 
     return {
       iconPlugin,
       sizeValue,
-      viewboxValue,
       styles,
     };
   },
@@ -56,17 +41,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.svg_icon {
-  display: inline;
-  transform: scale(var(--scale-x, 1), var(--scale-y, 1)) rotate(var(--rotate, 0deg));
-}
-
-path {
-  fill: currentColor;
-  transform: scale(calc(var(--size) / 24));
-}
-
 .text_icon {
+  transform: scale(var(--scale-x, 1), var(--scale-y, 1)) rotate(var(--rotate, 0deg));
+  font-size: var(--size);
+  color: currentColor;
   font-family: 'Font Awesome 5 Pro';
 }
 </style>
