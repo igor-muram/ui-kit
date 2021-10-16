@@ -12,26 +12,22 @@
     }"
   >
     <Icon
-      :svg_icon="this.svg_icon"
       :mode="this.icon_mode"
       :size="this.icon_size"
       :flip="this.icon_flip"
       :rotate="this.icon_rotate"
       :icon_class="this.icon_class"
-      :icon_type="this.icon_type"
       v-if="this.icon_position === 'prefix'"
     />
     <span>
       <slot></slot>
     </span>
     <Icon
-      :svg_icon="this.svg_icon"
       :mode="this.icon_mode"
       :size="this.icon_size"
       :flip="this.icon_flip"
       :rotate="this.icon_rotate"
       :icon_class="this.icon_class"
-      :icon_type="this.icon_type"
       v-if="this.icon_position === 'postfix'"
     />
   </button>
@@ -58,8 +54,6 @@ import Icon from '@/components/Icon.vue';
     icon_flip: String,
     icon_rotate: Number,
     icon_class: String,
-    svg_icon: String,
-    icon_type: String,
     icon_position: {
       type: String,
       validator: (value: string) => ['prefix', 'postfix', 'none'].includes(value),
@@ -89,8 +83,8 @@ export default class Button extends Vue {
   outline: none;
   line-height: 1;
 
-  .svg_icon + span:not(:empty),
-  span:not(:empty) + .svg_icon {
+  .text_icon + span:not(:empty),
+  span:not(:empty) + .text_icon {
     margin-left: 10px;
   }
 
@@ -161,7 +155,11 @@ export default class Button extends Vue {
   &--link {
     background: var(--link-bg-color);
     color: #000;
-    text-decoration: underline;
+
+    span {
+      text-decoration: underline;
+    }
+
     &:active,
     &:focus {
       box-shadow: 0 0 0 5px var(--link-border-color);
