@@ -2,10 +2,13 @@ import { computed } from 'vue';
 
 const modes = {
   default: {
-    size: 24,
+    size: 18,
+  },
+  middle: {
+    size: 22,
   },
   big: {
-    size: 48,
+    size: 26,
   },
 };
 
@@ -18,22 +21,17 @@ export default function useStyles(icon) {
     return icon.size || defaults.value.size;
   });
 
-  const viewboxValue = computed(() => {
-    return `0 0 ${sizeValue.value} ${sizeValue.value}`;
-  });
-
   const styles = computed(() => {
     return {
       '--scale-x': ['both', 'horizontal'].includes(icon.flip) ? '-1' : '1',
       '--scale-y': ['both', 'vertical'].includes(icon.flip) ? '-1' : '1',
       '--rotate': isNaN(icon.rotate) ? icon.rotate : icon.rotate + 'deg',
-      '--size': sizeValue.value,
+      '--size': sizeValue.value + 'px',
     };
   });
 
   return {
     sizeValue,
-    viewboxValue,
     styles,
   };
 }
