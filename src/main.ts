@@ -5,9 +5,9 @@ import iconPlugin from '@/plugins/icon-plugin';
 
 const app = createApp(App);
 
-const iconParameters = {
-	iconType: 'text',
+const options = {
+	iconType: 'awesome',
 };
 
-app.use(iconPlugin, iconParameters);
+app.use(iconPlugin, options);
 app.mount('#app');

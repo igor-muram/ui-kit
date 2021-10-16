@@ -1,5 +1,5 @@
 export default {
-  install: (app: any, options: object) => {
-    app.provide('icon-plugin', options);
-  },
-};
+  install: (app: any, options: any) => {
+    app.config.globalProperties.$iconType = options.iconType;
+  }
+}

@@ -181,6 +181,8 @@
     <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'link'" />
     <Button :icon_class="'fas fa-user-alt'" :icon_position="'prefix'" :theme="'disabled'" />
   </div>
+
+  <!-- <Icon :icon_class="'visibility'" :size="85" /> -->
 </template>
 
 <script lang="ts">

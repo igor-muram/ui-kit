@@ -1,15 +1,11 @@
 <template>
-  <i
-    class="text_icon"
-    v-if="iconPlugin.iconType === 'text'"
-    :class="icon_class || ''"
-    :style="styles"
-  ></i>
+  <i class="text_icon" v-if="$iconType === 'awesome'" :class="icon_class || ''" :style="styles"></i>
+  <span class="material-icons" v-if="$iconType === 'material'" :style="styles">
+    {{ icon_class }}
+  </span>
 </template>
 
 <script>
-import { inject } from 'vue';
-
 import useStyles from '@/hooks/useStyles';
 
 export default {
@@ -23,16 +19,16 @@ export default {
       validator: (value) => ['horizontal', 'vertical', 'both', 'none'].includes(value),
     },
     rotate: { type: Number, default: 0 },
-    icon_class: String,
+    icon_class: {
+      type: String,
+      required: true,
+    },
   },
 
   setup(props) {
-    const iconPlugin = inject('icon-plugin');
-
     const { sizeValue, styles } = useStyles(props);
 
     return {
-      iconPlugin,
       sizeValue,
       styles,
     };
@@ -42,9 +38,17 @@ export default {
 
 <style lang="scss" scoped>
 .text_icon {
+  font-family: 'Font Awesome 5 Pro';
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+.text_icon,
+.material-icons {
   transform: scale(var(--scale-x, 1), var(--scale-y, 1)) rotate(var(--rotate, 0deg));
   font-size: var(--size);
   color: currentColor;
-  font-family: 'Font Awesome 5 Pro';
 }
 </style>
