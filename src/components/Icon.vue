@@ -1,6 +1,11 @@
 <template>
-  <i class="text_icon" v-if="$iconType === 'awesome'" :class="icon_class || ''" :style="styles"></i>
-  <span class="material-icons" v-if="$iconType === 'material'" :style="styles">
+  <i
+    class="text_icon awesome-icons"
+    v-if="$iconType === 'awesome'"
+    :class="icon_class || ''"
+    :style="styles"
+  ></i>
+  <span class="text_icon material-icons" v-if="$iconType === 'material'" :style="styles">
     {{ icon_class }}
   </span>
 </template>
@@ -37,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.text_icon {
+.awesome-icons {
   font-family: 'Font Awesome 5 Pro';
 }
 
@@ -45,8 +50,7 @@ export default {
   font-family: 'Material Icons';
 }
 
-.text_icon,
-.material-icons {
+.text_icon {
   transform: scale(var(--scale-x, 1), var(--scale-y, 1)) rotate(var(--rotate, 0deg));
   font-size: var(--size);
   color: currentColor;
